@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="scope" onclick="scope_button()">Scope</button>
+      <button id="hoisting" onclick="hoisting_button()">Hoisting</button>
+      <button id="constructor" onclick="constructor_button()">
+        Constructor
+      </button>
+      <button id="prototype" onclick="prototype_button()">Prototype</button>
+      <div id="container"></div>
+    </div>
+  </body>
+  <script>
+    // setting scope into localstorage
+    let scope = {
+      1: "Global Scope",
+      2: "Local Scope",
+      3: "Block Scope",
+      4: "Function Scope",
+      5: "it  is high clean  in code",
+      6: "By scoping we can debug own very easily",
+    };
+
+    localStorage.setItem("scope", JSON.stringify(scope));
+    let container = document.getElementById("container");
+    function scope_button() {
+      container.innerHTML = null;
+      let retrieve_scope = JSON.parse(localStorage.getItem("scope"));
+      let html_scope = "<ul>";
+      for (let i = 1; i <= Object.keys(scope).length; i++) {
+        html_scope += `<li>${retrieve_scope[i]}</li>`;
+      }
+      html_scope += "</ul>";
+      container.innerHTML = html_scope;
+      console.log(html_scope);
+    }
+
+    let hoisting = {
+      1: "Global Hoisting",
+      2: "Local Hoisting",
+      3: "Block Hoisting",
+      4: "Function Hoisting",
+      5: "it  is high clean  in code",
+      6: "By scoping we can debug own very easily",
+    };
+
+    localStorage.setItem("hoisting", JSON.stringify(hoisting));
+
+    function hoisting_button() {
+      container.innerHTML = null;
+      let retrieve_hosting = JSON.parse(localStorage.getItem("hoisting"));
+      let html_hosting = "<ul>";
+      for (let i = 1; i <= Object.keys(hoisting).length; i++) {
+        html_hosting += `<li>${retrieve_hosting[i]}</li>`;
+      }
+      html_hosting += "</ul>";
+      container.innerHTML = html_hosting;
+      console.log(html_hosting);
+    }
+
+    let constructor = {
+      1: "Global Constructor",
+      2: "Local Constructor",
+      3: "Block Constructor",
+      4: "Function Constructor",
+      5: "it  is high clean  in code",
+      6: "By scoping we can debug own very easily",
+    };
+
+    localStorage.setItem("constructor", JSON.stringify(constructor));
+
+    function constructor_button() {
+      container.innerHTML = null;
+      let retrieve_constructor = JSON.parse(
+        localStorage.getItem("constructor")
+      );
+      let html_constructor = "<ul>";
+      for (let i = 1; i <= Object.keys(constructor).length; i++) {
+        html_constructor += `<li>${retrieve_constructor[i]}</li>`;
+      }
+      html_constructor += "</ul>";
+      container.innerHTML = html_constructor;
+      console.log(html_constructor);
+    }
+
+    let prototype = {
+      1: "Global Prototype",
+      2: "Local  Prototype",
+      3: "Block  Prototype",
+      4: "Function  Prototype",
+      5: "it  is high clean  in code",
+      6: "By scoping we can debug own very easily",
+    };
+
+    localStorage.setItem("prototype", JSON.stringify(prototype));
+
+    function prototype_button() {
+      container.innerHTML = null;
+      let retrieve_prototype = JSON.parse(localStorage.getItem("prototype"));
+      let html_prototype = "<ul>";
+      for (let i = 1; i <= Object.keys(prototype).length; i++) {
+        html_prototype += `<li>${retrieve_prototype[i]}</li>`;
+      }
+      html_prototype += "</ul>";
+      container.innerHTML = html_prototype;
+      console.log(html_prototype);
+    }
+
+    //  setting hoisting into localstorage
+  </script>
+</html>
